@@ -1,10 +1,10 @@
 
-class Zoo():
-    '''
+class Zoo:
+    """
         Class for Zoo object.
-    '''
+    """
     def __init__(self, name):
-        ''' Initialize the Zoo object. '''
+        """ Initialize the Zoo object. """
         # name of the Zoo
         self.name = name
         # we are using dictionaries for animals and personnel
@@ -12,33 +12,29 @@ class Zoo():
         self.zookeepers = {}
 
     def add_animal(self, animal):
-        ''' Adds an animal to the zoo. '''
+        """ Adds an animal to the zoo. """
         # we use animal's name as a key in the dictionary
         name = animal.get_name()
         self.animals[name] = animal
-        return 
 
     def add(self, animal):
-        ''' Shorter name of function to add animals to the Zoo. '''
+        """ Shorter name of function to add animals to the Zoo. """
         self.add_animal(animal)
-        return
 
     def get_animals(self):
-        ''' Return all animals in the zoo.'''
+        """ Return all animals in the zoo."""
         return self.animals
 
     def remove(self, name):
-        ''' Remove animal from the Zoo for given name. If the name does not exist, error is printed. '''
+        """ Remove animal from the Zoo for given name. If the name does not exist, error is printed. """
         if name in self.animals:
             # yes, animal with given name is in the Zoo
             del self.animals[name]
         else:
             print("Animal with given name is not in", self.name, "Zoo.")
-        
-        return
 
     def get_animal_names(self, sort=False):
-        ''' Return animal names in the Zoo. Return sorted names if parameters sorted==True'''
+        """ Return animal names in the Zoo. Return sorted names if parameters sorted==True"""
         names = []
         
         for key in self.animals.keys():
@@ -52,11 +48,11 @@ class Zoo():
         return names
 
     def number_animals(self):
-        ''' Return number of animals in the Zoo.'''
+        """ Return number of animals in the Zoo."""
         return len(self.animals)
 
     def total_area(self):
-        ''' Return the total Zoo area to host all animals defined in the object. '''
+        """ Return the total Zoo area to host all animals defined in the object. """
         area = 0
 
         for key in self.animals:
@@ -66,22 +62,21 @@ class Zoo():
         return area
 
     def add_person(self, person):
-        ''' Adds a person to the zoo. '''
+        """ Adds a person to the zoo. """
         # we use person's name as a key in the dictionary
         name = person.get_name()
         self.zookeepers[name] = person
-        return
 
     def number_zookeepers(self):
-        ''' Return number of zookeepers in the zoo.'''
+        """ Return number of zookeepers in the zoo."""
         return len(self.zookeepers)
 
     def get_zookeepers(self):
-        ''' Return zookeepers in the zoo.'''
+        """ Return zookeepers in the zoo."""
         return self.zookeepers
 
     def get_person_names(self, sort=False):
-        ''' Return personnel names in the Zoo. Return sorted names if parameters sorted==True'''
+        """ Return personnel names in the Zoo. Return sorted names if parameters sorted==True."""
         names = []
         
         for key in self.zookeepers.keys():
